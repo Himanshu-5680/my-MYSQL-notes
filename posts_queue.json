@@ -23,16 +23,16 @@
     ]
   },
   {
-    "day": 2,
-    "posted": true,
-    "content": "🚀 𝗗𝗮𝘆 𝟮 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗥𝗲𝗹𝗮𝘁𝗶𝗼𝗻𝗮𝗹 𝗠𝗼𝗱𝗲𝗹 𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁𝘀 & 𝗗𝗮𝘁𝗮 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆\n\nWhile studying database design today, I realized that creating a table is only half the job. Without strict rules on what data is allowed inside, a clean schema turns into a messy spreadsheet within weeks.\n\nUsing a 2-table BookShop schema, I practiced the 3 pillars of Data Integrity that protect databases from corrupted records and broken links.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗘𝗻𝘁𝗶𝘁𝘆 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗣𝗿𝗶𝗺𝗮𝗿𝘆 𝗞𝗲𝘆 𝗥𝘂𝗹𝗲): Ensures every table has a Primary Key so each row is distinct, unique, and never NULL:\n  CREATE TABLE BookShop (BOOK_ID INT PRIMARY KEY, TITLE VARCHAR(100), AUTHOR_ID INT);\n🔹 𝗥𝗲𝗳𝗲𝗿𝗲𝗻𝘁𝗶𝗮𝗹 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗙𝗼𝗿𝗲𝗶𝗴𝗻 𝗞𝗲𝘆 𝗥𝘂𝗹𝗲): Ensures a Foreign Key in a child table always points to a valid Primary Key in a parent table, preventing orphaned records:\n  FOREIGN KEY (AUTHOR_ID) REFERENCES BookShop_AuthorDetails(AUTHOR_ID)\n🔹 𝗗𝗼𝗺𝗮𝗶𝗻 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗗𝗮𝘁𝗮 𝗩𝗮𝗹𝗶𝗱𝗮𝘁𝗶𝗼𝗻 𝗥𝘂𝗹𝗲𝘀): Enforces rules on data types, mandatory fields (NOT NULL), and value ranges (CHECK):\n  PRICE DECIMAL(5, 2) CHECK (PRICE >= 0)\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nDo you prefer enforcing data validation rules inside the SQL schema with CHECK constraints, or inside your application code?\n\n#SQL #DataAnalytics #DatabaseDesign #MySQL",
-    "mentions": [
-      {
-        "text": "Data & Code by Himanshu",
-        "urn": "urn:li:organization:144024711"
-      }
-    ]
-  },
+  "day": 2,
+  "posted": false,
+  "content": "🚀 Day 2 of My Database Journey: Relational Model Constraints & Data Integrity\n\nWhile studying database design today, I realized that creating a table is only half the job. Without strict rules on what data is allowed inside, a clean schema turns into a messy spreadsheet within weeks.\n\nUsing a 2-table BookShop schema, I practiced the 3 pillars of Data Integrity that protect databases from corrupted records and broken links.\n\n💡 Core Concepts Learned Today:\n🔹 Entity Integrity (Primary Key Rule): Ensures every table has a Primary Key so each row is distinct, unique, and never NULL:\n  CREATE TABLE BookShop (BOOK_ID INT PRIMARY KEY, TITLE VARCHAR(100), AUTHOR_ID INT);\n🔹 Referential Integrity (Foreign Key Rule): Ensures a Foreign Key in a child table always points to a valid Primary Key in a parent table, preventing orphaned records.\n🔹 Domain Integrity (Data Validation Rules): Enforces rules on data types, mandatory fields (NOT NULL), and value ranges (CHECK constraint for valid limits).\n\n📂 Open-Source Journey:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 Learning Tracker:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nDo you prefer enforcing data validation rules inside the SQL schema with CHECK constraints, or inside your application code?\n\n#SQL #DataAnalytics #DatabaseDesign #MySQL",
+  "mentions": [
+    {
+      "text": "Data & Code by Himanshu",
+      "urn": "urn:li:organization:144024711"
+    }
+  ]
+},
   {
     "day": 3,
     "posted": false,
