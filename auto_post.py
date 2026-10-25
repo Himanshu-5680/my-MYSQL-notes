@@ -25,7 +25,7 @@ if "mentions" in next_post:
 url = "https://api.linkedin.com/rest/posts"
 headers = {
     "Authorization": f"Bearer {TOKEN}",
-    "LinkedIn-Version": "202401", # Required for new rest APIs
+    "LinkedIn-Version": "202409", # Required for new rest APIs
     "X-Restli-Protocol-Version": "2.0.0",
     "Content-Type": "application/json"
 }
