@@ -35,7 +35,7 @@
   },
   {
     "day": 3,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟯 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗦𝗘𝗟𝗘𝗖𝗧 𝗤𝘂𝗲𝗿𝗶𝗲𝘀 (𝗟𝗜𝗞𝗘, 𝗕𝗘𝗧𝗪𝗘𝗘𝗡, 𝗜𝗡)\n\nWhen you do not know the exact string stored in a table, or when you need to filter across 5 different countries, chaining endless '=' and 'OR' conditions makes a query hard to read and easy to break.\n\nToday, I replaced long, messy filter chains with three clean SQL operators.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗟𝗜𝗞𝗘 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 (𝗦𝘁𝗿𝗶𝗻𝗴 𝗣𝗮𝘁𝘁𝗲𝗿𝗻𝘀): Uses the '%' wildcard to search for partial text patterns when you only know part of a value:\n  SELECT firstname FROM author WHERE firstname LIKE 'R%';\n🔹 𝗕𝗘𝗧𝗪𝗘𝗘𝗡 ... 𝗔𝗡𝗗 (𝗜𝗻𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗥𝗮𝗻𝗴𝗲𝘀): Replaces long >= and <= conditions by filtering numbers or dates inclusively:\n  SELECT * FROM Book WHERE pages BETWEEN 290 AND 300;\n🔹 𝗜𝗡 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 (𝗦𝗲𝘁 𝗼𝗳 𝗩𝗮𝗹𝘂𝗲𝘀): Filters multiple exact values in a single list instead of writing repetitive OR statements:\n  SELECT * FROM author WHERE country IN ('Australia', 'Brazil');\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhich SQL operator saves you the most time during initial data exploration?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
       {
