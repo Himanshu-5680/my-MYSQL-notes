@@ -58,7 +58,7 @@
   },
   {
     "day": 4,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟰 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 𝗥𝗲𝘀𝘂𝗹𝘁 𝗦𝗲𝘁𝘀 𝘄𝗶𝘁𝗵 𝗢𝗥𝗗𝗘𝗥 𝗕𝗬\n\nA basic SELECT query returns rows in whatever order the database engine reads them. Today, I focused on turning unsorted database rows into clean, ranked output using the ORDER BY clause.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗗𝗲𝗳𝗮𝘂𝗹𝘁 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 (𝗔𝘀𝗰𝗲𝗻𝗱𝗶𝗻𝗴 𝗢𝗿𝗱𝗲𝗿): By default, ORDER BY arranges text alphabetically (A to Z) and numbers from lowest to highest:\n  SELECT title FROM book ORDER BY title;\n🔹 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 (𝗗𝗘𝗦𝗖 𝗞𝗲𝘆𝘄𝗼𝗿𝗱): Adding DESC at the end sorts results in reverse order (Z to A, or highest to lowest value):\n  SELECT title FROM book ORDER BY title DESC;\n🔹 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 𝗯𝘆 𝗖𝗼𝗹𝘂𝗺𝗻 𝗦𝗲𝗾𝘂𝗲𝗻𝗰𝗲 𝗡𝘂𝗺𝗯𝗲𝗿: Instead of typing the full column name again, you can pass its position number from the SELECT list for faster ad-hoc querying:\n  SELECT title, pages FROM book ORDER BY 2;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nIn your queries, do you use column numbers like ORDER BY 2 for speed, or always write explicit column names for readability?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
       {
