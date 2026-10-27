@@ -69,7 +69,7 @@
   },
   {
     "day": 5,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟱 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗚𝗿𝗼𝘂𝗽𝗶𝗻𝗴 & 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 𝗗𝗮𝘁𝗮 (𝗗𝗜𝗦𝗧𝗜𝗡𝗖𝗧, 𝗚𝗥𝗢𝗨𝗣 𝗕𝗬, 𝗛𝗔𝗩𝗜𝗡𝗚)\n\nRaw table dumps rarely answer business questions directly. Usually, we need unique lists, category counts, or filtered summaries. Today, I practiced summarizing 20 author rows across 6 countries and tackled the classic SQL question: WHERE vs. HAVING.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗗𝗜𝗦𝗧𝗜𝗡𝗖𝗧 (𝗥𝗲𝗺𝗼𝘃𝗶𝗻𝗴 𝗗𝘂𝗽𝗹𝗶𝗰𝗮𝘁𝗲𝘀): Collapses repeated column values into a clean list of unique entries:\n  SELECT DISTINCT country FROM author ORDER BY 1;\n🔹 𝗚𝗥𝗢𝗨𝗣 𝗕𝗬 & 𝗔𝗦 (𝗦𝘂𝗺𝗺𝗮𝗿𝗶𝘇𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗔𝗹𝗶𝗮𝘀𝗲𝘀): Buckets identical values together so aggregate functions like COUNT() can summarize each group with a clean column name:\n  SELECT country, COUNT(country) AS Count FROM author GROUP BY country;\n🔹 𝗛𝗔𝗩𝗜𝗡𝗚 𝘃𝘀. 𝗪𝗛𝗘𝗥𝗘: WHERE filters individual raw rows before grouping, while HAVING filters aggregated buckets after GROUP BY:\n  SELECT country, COUNT(country) AS Count FROM author GROUP BY country HAVING COUNT(country) > 4;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhen was the first time you accidentally put a COUNT() or SUM() condition inside a WHERE clause instead of HAVING?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
       {
