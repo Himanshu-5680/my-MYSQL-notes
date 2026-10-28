@@ -103,7 +103,7 @@
   },
   {
     "day": 7,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟳 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗗𝗮𝘁𝗲 𝗮𝗻𝗱 𝗧𝗶𝗺𝗲 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 𝗶𝗻 𝗦𝗤𝗟\n\nEvery real analytics project eventually asks a time question: \"How many rescues happened in May?\" or \"Which orders are more than 3 days overdue?\" Today, I explored how relational databases store, slice, and calculate dates across DATE (YYYYMMDD), TIME (HHMMSS), and 20-digit TIMESTAMP formats.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗶𝗻𝗴 𝗗𝗮𝘁𝗲 𝗣𝗮𝗿𝘁𝘀 (𝗗𝗔𝗬, 𝗠𝗢𝗡𝗧𝗛, 𝗬𝗘𝗔𝗥): Pulls out specific slices of a date for reporting or filtering directly inside the WHERE clause:\n  SELECT COUNT(*) FROM PETRESCUE WHERE MONTH(RESCUE_DATE) = 5;\n🔹 𝗗𝗮𝘁𝗲 𝗔𝗿𝗶𝘁𝗵𝗺𝗲𝘁𝗶𝗰 (𝗗𝗔𝗧𝗘_𝗔𝗗𝗗): Accurately shifts dates forward or backward by a set interval without worrying about 30-day vs. 31-day months:\n  SELECT DATE_ADD(RESCUE_DATE, INTERVAL 3 DAY) FROM PETRESCUE;\n🔹 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿𝘀 (𝗖𝗨𝗥𝗥𝗘𝗡𝗧_𝗗𝗔𝗧𝗘): Uses the server's live system date to calculate exact elapsed time:\n  SELECT (CURRENT_DATE - RESCUE_DATE) FROM PETRESCUE;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhat is the trickiest date or timezone bug you have ever faced while building a report?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
       {
