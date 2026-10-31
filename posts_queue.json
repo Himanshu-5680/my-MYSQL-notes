@@ -160,7 +160,7 @@
   },
   {
     "day": 10,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟬 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗔𝗰𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲𝘀 𝘄𝗶𝘁𝗵 𝗣𝘆𝘁𝗵𝗼𝗻 & 𝗦𝗤𝗟 𝗔𝗣𝗜𝘀\n\nWriting standalone SQL queries is great for pulling data, but connecting SQL directly to Python inside a Jupyter Notebook lets you query, clean, and visualize data in one unified workflow.\n\nToday, I mapped out the 4 standard API calls that happen behind the scenes every single time a Python script talks to a database.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗪𝗵𝘆 𝗣𝗮𝗶𝗿 𝗣𝘆𝘁𝗵𝗼𝗻 𝘄𝗶𝘁𝗵 𝗦𝗤𝗟: Direct handoff from relational tables into Pandas, NumPy, and Matplotlib inside shareable Jupyter Notebooks.\n🔹 𝗧𝗵𝗲 𝟰-𝗦𝘁𝗲𝗽 𝗗𝗕𝗠𝗦 𝗔𝗣𝗜 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄:\n  1. Connect: Authenticate and open a session with the DBMS.\n  2. Build & Send: Pass the SQL query as a text string buffer via API.\n  3. Check Status: Fetch the returned rows and handle any execution errors.\n  4. Disconnect: Close the connection to free up database resources.\n🔹 𝗦𝘁𝗮𝗻𝗱𝗮𝗿𝗱 𝗦𝗤𝗟 𝗗𝗿𝗶𝘃𝗲𝗿𝘀: Every major database pairs with a dedicated driver, such as psycopg2 for PostgreSQL, mysql-connector for MySQL, and ibm_db for Db2.\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nWhich database driver do you use most often when connecting Python to SQL?\n\n#SQL #Python #DataAnalytics #MySQL",
     "mentions": [
       {
