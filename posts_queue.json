@@ -171,7 +171,7 @@
   },
   {
     "day": 11,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟭 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗪𝗿𝗶𝘁𝗶𝗻𝗴 𝗖𝗼𝗱𝗲 𝗨𝘀𝗶𝗻𝗴 𝗣𝘆𝘁𝗵𝗼𝗻 𝗗𝗕-𝗔𝗣𝗜\n\nBefore learning Python's DB-API, I wondered if switching from MySQL to PostgreSQL meant rewriting all my database code from scratch. Today, I learned how two core objects—Connections and Cursors—standardize database programming across Python.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗢𝗯𝗷𝗲𝗰𝘁𝘀 (𝗦𝗲𝘀𝘀𝗶𝗼𝗻 𝗠𝗮𝗻𝗮𝗴𝗲𝗿): Manages authentication and transactions using 4 key methods: .cursor(), .commit() to save changes, .rollback() to undo errors, and .close() to free memory.\n🔹 𝗖𝘂𝗿𝘀𝗼𝗿 𝗢𝗯𝗷𝗲𝗰𝘁𝘀 (𝗙𝗶𝗹𝗲-𝗛𝗮𝗻𝗱𝗹𝗲 𝗳𝗼𝗿 𝗥𝗼𝘄𝘀): Executes SQL queries and scrolls through fetched results row-by-row. Multiple cursors on the same connection are not isolated—changes made by one are immediately visible to others.\n🔹 𝗧𝗵𝗲 𝟱-𝗦𝘁𝗲𝗽 𝗗𝗕-𝗔𝗣𝗜 𝗖𝗼𝗱𝗶𝗻𝗴 𝗣𝗮𝘁𝘁𝗲𝗿𝗻:\n  conn = psycopg2.connect(dbname=\"analytics\", user=\"admin\", password=\"pwd\")\n  cur = conn.cursor()\n  cur.execute(\"SELECT * FROM employees;\")\n  rows = cur.fetchall()\n  conn.close()\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nDo you close your database connections manually with .close(), or wrap them inside a Python 'with' context manager?\n\n#Python #SQL #DataAnalytics #DailyLearning",
     "mentions": [
       {
