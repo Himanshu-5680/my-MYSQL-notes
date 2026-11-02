@@ -194,7 +194,7 @@
   },
   {
     "day": 12,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟮 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗝𝘂𝗽𝘆𝘁𝗲𝗿 𝗡𝗼𝘁𝗲𝗯𝗼𝗼𝗸 𝗠𝗮𝗴𝗶𝗰 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 & 𝗦𝗤𝗟 𝗠𝗮𝗴𝗶𝗰\n\nTyping conn.cursor() and cur.execute() every time you want to test a quick SQL query in Jupyter slows down data exploration. Today, I set up ipython-sql Magic Commands to run clean SQL directly inside notebook cells using % and %% symbols.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗟𝗶𝗻𝗲 𝗠𝗮𝗴𝗶𝗰 (%) 𝘃𝘀. 𝗖𝗲𝗹𝗹 𝗠𝗮𝗴𝗶𝗰 (%%): Single % commands (like %pwd, %ls, %whos) run on a single line, while double %% commands (like %%timeit, %%writefile) operate on the entire cell.\n🔹 𝗧𝗵𝗲 𝗦𝗤𝗟 𝗠𝗮𝗴𝗶𝗰 𝗦𝗲𝘁𝘂𝗽 𝗶𝗻 𝗝𝘂𝗽𝘆𝘁𝗲𝗿:\n  !pip install ipython-sql\n  %load_ext sql\n  %sql sqlite:///HR.db\n🔹 𝟭-𝗟𝗶𝗻𝗲 𝘃𝘀. 𝗠𝘂𝗹𝘁𝗶-𝗟𝗶𝗻𝗲 𝗦𝗤𝗟 𝗤𝘂𝗲𝗿𝗶𝗲𝘀: Use %sql for quick one-liners and %%sql at the very top of a cell for complex multi-line queries:\n  %%sql\n  SELECT department, COUNT(*) FROM employee GROUP BY department;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nWhat is your favorite Jupyter magic command that speeds up your daily data workflow?\n\n#Jupyter #SQL #Python #DataAnalytics",
     "mentions": [
       {
