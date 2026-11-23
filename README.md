@@ -12,7 +12,7 @@
 
 &nbsp;
 
-> 📥 **Download:** [Get the PDF version of these notes here](http://SQL-for-Data-Science-Coursera-Cheatsheet.pdf?raw=true)
+> 📥 **Download:** [Get the PDF version of these notes here](https://github.com/Himanshu-5680/my-MYSQL-notes/blob/main/Raw_Notes-%26-PDF/SQL-for-Data-Science-Coursera-Cheatsheet.pdf?raw=true)
 > 📥 **Download:** [New release](https://github.com/Himanshu-5680/SQL-for-Data-Science-Cheatsheet/releases/latest)
 
 </div>
@@ -42,7 +42,7 @@
 17. [🐍 Accessing Databases with Python & SQL APIs](#17--accessing-databases-with-python--sql-apis)  
 18. [💻 Writing Code Using Python DB-API](#18--writing-code-using-python-db-api)  
 19. [📓 Jupyter Notebook Magic Commands & SQL Magic](#19--jupyter-notebook-magic-commands--sql-magic)  
-20. [📈 Data Analysis with Python (SQL, Pandas & Seaborn)](#20--data-analysis-with-python-sql-pandas--seaborn)
+20. [📈 Analyzing Data with Python (SQLite3, Pandas & Seaborn)](#20--analyzing-data-with-python-sqlite3-pandas--seaborn)
 
 </details>
 
@@ -920,90 +920,83 @@ GROUP BY department;
 
 ---
 
-## 20\. 📈 Data Analysis with Python (SQL, Pandas & Seaborn)
+## 20\. 📈 Analyzing Data with Python (SQLite3, Pandas & Seaborn)
 
-Exploratory Data Analysis (EDA) is the process of investigating datasets to discover patterns, spot anomalies (outliers), and test hypotheses using summary statistics and graphical representations.
+**Dataset:** McDonald's Menu Nutritional Facts (from Kaggle) — **260 food items** across **9 unique categories**.
 
-### 1\. Database Setup: Storing CSV Data into SQL
+### 1\. Storing & Retrieving Data with SQLite3
 
-Instead of analyzing raw CSV files, Data Analysts often load data into a local database for efficient querying. SQLite3 is a serverless, zero-configuration SQL database engine built into Python.
+* **SQLite3:** An in-process Python library that provides a **self-contained, serverless, zero-configuration** transactional SQL database engine.
 
-**Step 1:** Read the CSV file using Pandas.
+**Workflow (CSV $\rightarrow$ SQL $\rightarrow$ Pandas):**
 
-```py
+```python
 import pandas as pd
 import sqlite3
 
-data = pd.read_csv('mcdonalds_menu.csv')
-```
+# 1. Read CSV file
+data = pd.read_csv('menu.csv')
 
-**Step 2:** Connect to the SQLite Database.
-
-```py
+# 2. Connect to (or create) SQLite database
 conn = sqlite3.connect('mcdonalds.db')
-```
 
-**Step 3:** Load the Pandas DataFrame into the SQL Database.
-
-```py
+# 3. Load DataFrame into SQL table
 data.to_sql('mcdonalds_nutrition', conn)
-```
 
-*(The CSV data is now officially saved as a table named `mcdonalds_nutrition` in your SQL database).*
+# 4. Retrieve data from SQL table into a Pandas DataFrame
+df = pd.read_sql("SELECT * FROM mcdonalds_nutrition", conn)
 
-### 2\. Retrieving Data: SQL to Pandas
-
-To analyze the data, you pull it back from the SQL database into a Pandas DataFrame using a standard SQL query.
-
-**Method:** `pd.read_sql()`
-
-```py
-query = "SELECT * FROM mcdonalds_nutrition"
-df = pd.read_sql(query, conn)
-
-# View the first 5 rows
+# 5. View first 5 rows
 df.head()
 ```
 
-### 3\. Basic Exploratory Data Analysis (EDA)
+### 2\. Exploratory Data Analysis (EDA) with Pandas
 
-Pandas provides built-in statistical methods to quickly understand your dataset.
+EDA helps inspect summary statistics, patterns, and extreme values.
 
-* `df.describe()`: Generates summary statistics (count, mean, standard deviation, minimum, maximum, and percentiles) for all numeric columns.  
-* **Finding Specific Extremes (e.g., Highest Sodium Item):** If `df.describe()` shows the maximum sodium is 3600mg, you need to find which item that is.
+* **`df.describe()`:** Shows count (frequency), mean, median, standard deviation, min, and max.
+  * *Dataset facts:* 260 items, 9 categories, Max Total Fat = **118**.
+* **Sodium Context:** Recommended daily limit is **< 2,000 mg** (excess sodium raises blood pressure and causes fluid retention).
 
-```py
-# Find the index (row number) of the maximum sodium value
-max_index = df['Sodium'].idxmax()  # Output: 82
+**Finding the Food Item with Maximum Sodium:**
 
-# Find the exact item name at that index
-item_name = df.at[max_index, 'Item']  # Output: Chicken McNuggets (40 pieces)
+```python
+# 1. Check sodium summary stats (Max = 3600 mg)
+df['Sodium'].describe()
+
+# 2. Get the row index of the maximum sodium value
+df['Sodium'].idxmax()          # Output: 82
+
+# 3. Get the item name at index 82
+df.at[82, 'Item']              # Output: Chicken McNuggets (40 piece)
 ```
 
-**Conceptual Output Table (How Python sees the data):**
+**Example Table (`mcdonalds_nutrition` DataFrame):**
 
 | Index | Category | Item | Protein | Total Fat | Sodium | Sugars |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| 80 | Chicken & Fish | Chicken McNuggets (10 pcs) | 22 | 19 | 900 | 0 |
-| 81 | Chicken & Fish | Chicken McNuggets (20 pcs) | 44 | 38 | 1800 | 0 |
-| 82 | Chicken & Fish | Chicken McNuggets (40 pcs) | 87 | 74 | 3600 | 1 |
+| 0 | Breakfast | Egg McMuffin | 17 | 13 | 750 | 3 |
+| 81 | Chicken & Fish | Chicken McNuggets (20 piece) | 44 | 59 | 1800 | 0 |
+| **82** | **Chicken & Fish** | **Chicken McNuggets (40 piece)** | **87** | **118** | **3600** | **1** |
 
-### 4\. Visualizing Data with Seaborn
+### 3\. Data Visualization with Seaborn
 
-Visualizations help you instantly spot relationships, correlations, and outliers that numbers alone cannot show.
+Visualizations quickly reveal **relationships, patterns, skewness, and outliers**.
 
-* `swarmplot()` (Categorical Scatter Plot):
+| Plot Type | Seaborn Function | Inputs Used | Purpose & Key Insight |
+| :---- | :---- | :---- | :---- |
+| **Categorical Scatter Plot** | `sns.swarmplot()` | `x='Category'`, `y='Sodium'`, `data=df` | Compares values across categories; visually spots the extreme **~3,600 mg** sodium outlier. |
+| **Joint Plot (Scatter + Histograms)** | `sns.jointplot()` | `x='Protein'`, `y='Total Fat'`, `data=df` | Shows **correlation** (ranges from **-1 to +1**) plus histograms on top (Protein) & right (Total Fat). Found strong positive correlation (**Pearson = 0.81**, significant `p`-value) and 1 possible outlier. |
+| **Box Plot** | `sns.boxplot()` | `x=df['Sugars']` | Shows distribution. The **box = middle 50%** of data; lines/dots show skewness & outliers. Average sugar **~30g**, extreme outliers up to **~128g** (e.g., candies/desserts). |
 
-  * **Use Case:** To see the distribution of a continuous variable across different categories.  
-  * **Example:** Plotting Category on the X-axis and Sodium on the Y-axis. It clearly visually separates the extreme 3600mg outlier from the rest of the standard menu items.  
-* `jointplot()` (Scatter Plot with Histograms):
+**Quick Code Reference:**
 
-  * **Use Case:** To check the correlation (relationship) between two numeric variables.  
-  * **Example:** Plotting Protein vs. Total Fat. If the points form a straight upward line, it indicates a positive correlation (as protein increases, fat generally increases). It also calculates the Pearson correlation coefficient (e.g., 0.81, meaning a strong positive relationship).  
-* `boxplot()`:
+```python
+import seaborn as sns
 
-  * **Use Case:** Excellent for showing data distribution and spotting outliers.  
-  * **Structure:** The main "box" captures the middle 50% of the data. The lines (whiskers) show the standard range. Individual dots outside the lines are extreme outliers.  
-  * **Example:** A boxplot for Sugars shows the average is around 30g, but highlights isolated dots at 128g (likely large milkshakes or McFlurries).
+sns.swarmplot(x='Category', y='Sodium', data=df)
+sns.jointplot(x='Protein', y='Total Fat', data=df)
+sns.boxplot(x=df['Sugars'])
+```
 
 [⬆ Back to Top](#-sql-for-data-science-quick-revision-notes)
