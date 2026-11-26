@@ -1,127 +1,229 @@
 [
   {
     "day": 1,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗕𝘂𝗶𝗹𝗱𝗶𝗻𝗴 𝗠𝘆 𝗙𝗶𝗿𝘀𝘁 𝗦𝗰𝗵𝗲𝗺𝗮\n\nToday, I focused on how real test environments work. Creating a table feels simple until you run the same script twice. On my second run in the sandbox, my screen threw a classic blocker: \"table COUNTRY already exists.\"\n\nThat single error connected all three core concepts from my daily learning.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗖𝗥𝗘𝗔𝗧𝗘 𝗧𝗔𝗕𝗟𝗘: Building the structure with exact column names and data types:\n  CREATE TABLE COUNTRY (ID int, CCODE char(2), Name varchar(60));\n🔹 𝗣𝗥𝗜𝗠𝗔𝗥𝗬 𝗞𝗘𝗬 & 𝗡𝗢𝗧 𝗡𝗨𝗟𝗟: Locking IDs to stop duplicate rows. A database never allows empty values inside a Primary Key constraint:\n  CREATE TABLE COUNTRY (ID int NOT NULL, CCODE char(2), Name varchar(60), PRIMARY KEY (ID));\n🔹 𝗗𝗥𝗢𝗣 𝗧𝗔𝗕𝗟𝗘: The standard practice of cleaning up old test tables right before creating fresh ones to avoid duplicate errors:\n  DROP TABLE COUNTRY;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my ongoing progress on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhen you test SQL scripts locally, do you use DROP TABLE first or CREATE TABLE IF NOT EXISTS?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 2,
-    "posted": false,
-    "content": "🚀 𝗗𝗮𝘆 𝟮 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗥𝗲𝗹𝗮𝘁𝗶𝗼𝗻𝗮𝗹 𝗠𝗼𝗱𝗲𝗹 𝗖𝗼𝗻𝘀𝘁𝗿𝗮𝗶𝗻𝘁𝘀 & 𝗗𝗮𝘁𝗮 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆\n\nWhile studying database design today, I realized that creating a table is only half the job. Without strict rules on what data is allowed inside, a clean schema turns into a messy spreadsheet within weeks.\n\nUsing a 2-table BookShop schema, I practiced the 3 pillars of Data Integrity that protect databases from corrupted records and broken links.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗘𝗻𝘁𝗶𝘁𝘆 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗣𝗿𝗶𝗺𝗮𝗿𝘆 𝗞𝗲𝘆 𝗥𝘂𝗹𝗲): Ensures every table has a Primary Key so each row is distinct, unique, and never NULL:\n  CREATE TABLE BookShop (BOOK_ID INT PRIMARY KEY, TITLE VARCHAR(100), AUTHOR_ID INT);\n🔹 𝗥𝗲𝗳𝗲𝗿𝗲𝗻𝘁𝗶𝗮𝗹 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗙𝗼𝗿𝗲𝗶𝗴𝗻 𝗞𝗲𝘆 𝗥𝘂𝗹𝗲): Ensures a Foreign Key in a child table always points to a valid Primary Key in a parent table, preventing orphaned records:\n  FOREIGN KEY (AUTHOR_ID) REFERENCES BookShop_AuthorDetails(AUTHOR_ID)\n🔹 𝗗𝗼𝗺𝗮𝗶𝗻 𝗜𝗻𝘁𝗲𝗴𝗿𝗶𝘁𝘆 (𝗗𝗮𝘁𝗮 𝗩𝗮𝗹𝗶𝗱𝗮𝘁𝗶𝗼𝗻 𝗥𝘂𝗹𝗲𝘀): Enforces rules on data types, mandatory fields (NOT NULL), and value ranges (CHECK):\n  PRICE DECIMAL(5, 2) CHECK (PRICE >= 0)\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nDo you prefer enforcing data validation rules inside the SQL schema with CHECK constraints, or inside your application code?\n\n#SQL #DataAnalytics #DatabaseDesign #MySQL",
+    "posted": true,
+    "content": "🚀 Day 2 of My Database Journey: Relational Model Constraints & Data Integrity\n\nWhile studying database design today, I realized that creating a table is only half the job. Without strict rules on what data is allowed inside, a clean schema turns into a messy spreadsheet within weeks.\n\nUsing a 2-table BookShop schema, I practiced the 3 pillars of Data Integrity that protect databases from corrupted records and broken links.\n\n💡 Core Concepts Learned Today:\n🔹 Entity Integrity (Primary Key Rule): Ensures every table has a Primary Key so each row is distinct, unique, and never NULL:\n  CREATE TABLE BookShop (BOOK_ID INT PRIMARY KEY, TITLE VARCHAR(100), AUTHOR_ID INT);\n🔹 Referential Integrity (Foreign Key Rule): Ensures a Foreign Key in a child table always points to a valid Primary Key in a parent table, preventing orphaned records.\n🔹 Domain Integrity (Data Validation Rules): Enforces rules on data types, mandatory fields (NOT NULL), and value ranges (CHECK constraint for valid limits).\n\n📂 Open-Source Journey:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 Learning Tracker:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nDo you prefer enforcing data validation rules inside the SQL schema with CHECK constraints, or inside your application code?\n\n#SQL #DataAnalytics #DatabaseDesign #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 3,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟯 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗦𝗘𝗟𝗘𝗖𝗧 𝗤𝘂𝗲𝗿𝗶𝗲𝘀 (𝗟𝗜𝗞𝗘, 𝗕𝗘𝗧𝗪𝗘𝗘𝗡, 𝗜𝗡)\n\nWhen you do not know the exact string stored in a table, or when you need to filter across 5 different countries, chaining endless '=' and 'OR' conditions makes a query hard to read and easy to break.\n\nToday, I replaced long, messy filter chains with three clean SQL operators.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗟𝗜𝗞𝗘 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 (𝗦𝘁𝗿𝗶𝗻𝗴 𝗣𝗮𝘁𝘁𝗲𝗿𝗻𝘀): Uses the '%' wildcard to search for partial text patterns when you only know part of a value:\n  SELECT firstname FROM author WHERE firstname LIKE 'R%';\n🔹 𝗕𝗘𝗧𝗪𝗘𝗘𝗡 ... 𝗔𝗡𝗗 (𝗜𝗻𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗥𝗮𝗻𝗴𝗲𝘀): Replaces long >= and <= conditions by filtering numbers or dates inclusively:\n  SELECT * FROM Book WHERE pages BETWEEN 290 AND 300;\n🔹 𝗜𝗡 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 (𝗦𝗲𝘁 𝗼𝗳 𝗩𝗮𝗹𝘂𝗲𝘀): Filters multiple exact values in a single list instead of writing repetitive OR statements:\n  SELECT * FROM author WHERE country IN ('Australia', 'Brazil');\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhich SQL operator saves you the most time during initial data exploration?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 4,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟰 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 𝗥𝗲𝘀𝘂𝗹𝘁 𝗦𝗲𝘁𝘀 𝘄𝗶𝘁𝗵 𝗢𝗥𝗗𝗘𝗥 𝗕𝗬\n\nA basic SELECT query returns rows in whatever order the database engine reads them. Today, I focused on turning unsorted database rows into clean, ranked output using the ORDER BY clause.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗗𝗲𝗳𝗮𝘂𝗹𝘁 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 (𝗔𝘀𝗰𝗲𝗻𝗱𝗶𝗻𝗴 𝗢𝗿𝗱𝗲𝗿): By default, ORDER BY arranges text alphabetically (A to Z) and numbers from lowest to highest:\n  SELECT title FROM book ORDER BY title;\n🔹 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 (𝗗𝗘𝗦𝗖 𝗞𝗲𝘆𝘄𝗼𝗿𝗱): Adding DESC at the end sorts results in reverse order (Z to A, or highest to lowest value):\n  SELECT title FROM book ORDER BY title DESC;\n🔹 𝗦𝗼𝗿𝘁𝗶𝗻𝗴 𝗯𝘆 𝗖𝗼𝗹𝘂𝗺𝗻 𝗦𝗲𝗾𝘂𝗲𝗻𝗰𝗲 𝗡𝘂𝗺𝗯𝗲𝗿: Instead of typing the full column name again, you can pass its position number from the SELECT list for faster ad-hoc querying:\n  SELECT title, pages FROM book ORDER BY 2;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nIn your queries, do you use column numbers like ORDER BY 2 for speed, or always write explicit column names for readability?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 5,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟱 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗚𝗿𝗼𝘂𝗽𝗶𝗻𝗴 & 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 𝗗𝗮𝘁𝗮 (𝗗𝗜𝗦𝗧𝗜𝗡𝗖𝗧, 𝗚𝗥𝗢𝗨𝗣 𝗕𝗬, 𝗛𝗔𝗩𝗜𝗡𝗚)\n\nRaw table dumps rarely answer business questions directly. Usually, we need unique lists, category counts, or filtered summaries. Today, I practiced summarizing 20 author rows across 6 countries and tackled the classic SQL question: WHERE vs. HAVING.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗗𝗜𝗦𝗧𝗜𝗡𝗖𝗧 (𝗥𝗲𝗺𝗼𝘃𝗶𝗻𝗴 𝗗𝘂𝗽𝗹𝗶𝗰𝗮𝘁𝗲𝘀): Collapses repeated column values into a clean list of unique entries:\n  SELECT DISTINCT country FROM author ORDER BY 1;\n🔹 𝗚𝗥𝗢𝗨𝗣 𝗕𝗬 & 𝗔𝗦 (𝗦𝘂𝗺𝗺𝗮𝗿𝗶𝘇𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗔𝗹𝗶𝗮𝘀𝗲𝘀): Buckets identical values together so aggregate functions like COUNT() can summarize each group with a clean column name:\n  SELECT country, COUNT(country) AS Count FROM author GROUP BY country;\n🔹 𝗛𝗔𝗩𝗜𝗡𝗚 𝘃𝘀. 𝗪𝗛𝗘𝗥𝗘: WHERE filters individual raw rows before grouping, while HAVING filters aggregated buckets after GROUP BY:\n  SELECT country, COUNT(country) AS Count FROM author GROUP BY country HAVING COUNT(country) > 4;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhen was the first time you accidentally put a COUNT() or SUM() condition inside a WHERE clause instead of HAVING?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 6,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟲 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗕𝘂𝗶𝗹𝘁-𝗶𝗻 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 (𝗔𝗴𝗴𝗿𝗲𝗴𝗮𝘁𝗲 𝘃𝘀. 𝗦𝗰𝗮𝗹𝗮𝗿)\n\nA single dirty text column with 'Cat', 'CAT', and 'cat' showed me why built-in SQL functions matter so much for real-world data cleaning.\n\nToday, I worked with the PETRESCUE dataset to practice two core families of SQL functions: Aggregate functions and Scalar functions.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗔𝗴𝗴𝗿𝗲𝗴𝗮𝘁𝗲 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 (𝗦𝗨𝗠, 𝗔𝗩𝗚, 𝗠𝗔𝗫, 𝗠𝗜𝗡): Take an entire column of values and return a single summary metric, even allowing math inside parentheses:\n  SELECT AVG(COST / QUANTITY) FROM PETRESCUE WHERE ANIMAL = 'Dog';\n🔹 𝗦𝗰𝗮𝗹𝗮𝗿 & 𝗦𝘁𝗿𝗶𝗻𝗴 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 (𝗥𝗢𝗨𝗡𝗗, 𝗟𝗘𝗡𝗚𝗧𝗛, 𝗨𝗖𝗔𝗦𝗘, 𝗟𝗖𝗔𝗦𝗘): Operate on every individual value row-by-row:\n  SELECT ROUND(COST), LENGTH(ANIMAL), UCASE(ANIMAL) FROM PETRESCUE;\n🔹 𝗖𝗮𝘀𝗲-𝗦𝗮𝗳𝗲 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴 & 𝗡𝗲𝘀𝘁𝗶𝗻𝗴: Converting messy text to lowercase inside WHERE ensures you never miss a row due to inconsistent capitalization:\n  SELECT * FROM PETRESCUE WHERE LCASE(ANIMAL) = 'cat';\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nDo you usually clean messy string casing inside your SQL query with LOWER()/LCASE(), or later inside Python with Pandas?\n\n#SQL #DataAnalytics #DataCleaning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 7,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟳 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗗𝗮𝘁𝗲 𝗮𝗻𝗱 𝗧𝗶𝗺𝗲 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀 𝗶𝗻 𝗦𝗤𝗟\n\nEvery real analytics project eventually asks a time question: \"How many rescues happened in May?\" or \"Which orders are more than 3 days overdue?\" Today, I explored how relational databases store, slice, and calculate dates across DATE (YYYYMMDD), TIME (HHMMSS), and 20-digit TIMESTAMP formats.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗶𝗻𝗴 𝗗𝗮𝘁𝗲 𝗣𝗮𝗿𝘁𝘀 (𝗗𝗔𝗬, 𝗠𝗢𝗡𝗧𝗛, 𝗬𝗘𝗔𝗥): Pulls out specific slices of a date for reporting or filtering directly inside the WHERE clause:\n  SELECT COUNT(*) FROM PETRESCUE WHERE MONTH(RESCUE_DATE) = 5;\n🔹 𝗗𝗮𝘁𝗲 𝗔𝗿𝗶𝘁𝗵𝗺𝗲𝘁𝗶𝗰 (𝗗𝗔𝗧𝗘_𝗔𝗗𝗗): Accurately shifts dates forward or backward by a set interval without worrying about 30-day vs. 31-day months:\n  SELECT DATE_ADD(RESCUE_DATE, INTERVAL 3 DAY) FROM PETRESCUE;\n🔹 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿𝘀 (𝗖𝗨𝗥𝗥𝗘𝗡𝗧_𝗗𝗔𝗧𝗘): Uses the server's live system date to calculate exact elapsed time:\n  SELECT (CURRENT_DATE - RESCUE_DATE) FROM PETRESCUE;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhat is the trickiest date or timezone bug you have ever faced while building a report?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 8,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟴 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝗶𝗲𝘀 (𝗡𝗲𝘀𝘁𝗲𝗱 𝗤𝘂𝗲𝗿𝗶𝗲𝘀)\n\nTry writing WHERE salary > AVG(salary) in SQL and the database immediately throws an \"Invalid use of aggregate function\" error. Try selecting EMP_ID, SALARY, AVG(SALARY) without grouping, and it fails again.\n\nToday, I learned how wrapping a second SELECT statement inside parentheses—a Subquery—solves both blockers cleanly.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝘆 𝗶𝗻 𝘁𝗵𝗲 𝗪𝗛𝗘𝗥𝗘 𝗖𝗹𝗮𝘂𝘀𝗲: Computes the aggregate metric in an inner query first so the outer query can filter against it:\n  SELECT EMP_ID, FIRST_NAME, SALARY FROM EMPLOYEES WHERE SALARY < (SELECT AVG(SALARY) FROM EMPLOYEES);\n🔹 𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝘆 𝗶𝗻 𝘁𝗵𝗲 𝗦𝗘𝗟𝗘𝗖𝗧 𝗟𝗶𝘀𝘁: Compares individual row values side-by-side against the overall company average without collapsing rows:\n  SELECT EMP_ID, SALARY, (SELECT AVG(SALARY) FROM EMPLOYEES) AS AVG_SALARY FROM EMPLOYEES;\n🔹 𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝘆 𝗶𝗻 𝘁𝗵𝗲 𝗙𝗥𝗢𝗠 𝗖𝗹𝗮𝘂𝘀𝗲 (𝗗𝗲𝗿𝗶𝘃𝗲𝗱 𝗧𝗮𝗯𝗹𝗲𝘀): Treats the inner query result as a temporary virtual table—great for hiding sensitive columns like SALARY or DOB:\n  SELECT * FROM (SELECT EMP_ID, FIRST_NAME, LAST_NAME, DEPT_ID FROM EMPLOYEES) AS EMP4ALL;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nWhen writing multi-step logic, do you reach for nested Subqueries first or Common Table Expressions (CTEs)?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 9,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟵 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗔𝗰𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗠𝘂𝗹𝘁𝗶𝗽𝗹𝗲 𝗧𝗮𝗯𝗹𝗲𝘀 (𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝗶𝗲𝘀 & 𝗜𝗺𝗽𝗹𝗶𝗰𝗶𝘁 𝗝𝗼𝗶𝗻𝘀)\n\nA single missing WHERE condition in a multi-table query can multiply 1,000 employees by 50 departments into 50,000 useless rows (a Cartesian Product).\n\nIn real databases, employee records and department details live in separate tables. Today, I practiced two ways to pull connected data across tables accurately.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗠𝘂𝗹𝘁𝗶-𝗧𝗮𝗯𝗹𝗲 𝗦𝘂𝗯𝗾𝘂𝗲𝗿𝗶𝗲𝘀: Uses the output of a query on the DEPARTMENTS table as a filter inside the EMPLOYEES query:\n  SELECT * FROM employees WHERE DEP_ID IN (SELECT DEP_ID_DEP FROM departments WHERE LOC_ID = 'L0002');\n🔹 𝗜𝗺𝗽𝗹𝗶𝗰𝗶𝘁 𝗝𝗼𝗶𝗻𝘀: Lists multiple tables in FROM and links their matching Primary/Foreign Keys inside the WHERE clause to prevent a Cartesian Product:\n  SELECT * FROM employees, departments WHERE employees.DEP_ID = departments.DEP_ID_DEP;\n🔹 𝗧𝗮𝗯𝗹𝗲 𝗔𝗹𝗶𝗮𝘀𝗲𝘀: Gives tables short nicknames (like E and D) to keep multi-table queries clean and readable:\n  SELECT E.EMP_ID, D.DEP_NAME FROM employees E, departments D WHERE E.DEP_ID = D.DEP_ID_DEP;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nHave you ever accidentally triggered a massive Cartesian Join on a large database table?\n\n#SQL #DataAnalytics #DailyLearning #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 10,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟬 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗔𝗰𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲𝘀 𝘄𝗶𝘁𝗵 𝗣𝘆𝘁𝗵𝗼𝗻 & 𝗦𝗤𝗟 𝗔𝗣𝗜𝘀\n\nWriting standalone SQL queries is great for pulling data, but connecting SQL directly to Python inside a Jupyter Notebook lets you query, clean, and visualize data in one unified workflow.\n\nToday, I mapped out the 4 standard API calls that happen behind the scenes every single time a Python script talks to a database.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗪𝗵𝘆 𝗣𝗮𝗶𝗿 𝗣𝘆𝘁𝗵𝗼𝗻 𝘄𝗶𝘁𝗵 𝗦𝗤𝗟: Direct handoff from relational tables into Pandas, NumPy, and Matplotlib inside shareable Jupyter Notebooks.\n🔹 𝗧𝗵𝗲 𝟰-𝗦𝘁𝗲𝗽 𝗗𝗕𝗠𝗦 𝗔𝗣𝗜 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄:\n  1. Connect: Authenticate and open a session with the DBMS.\n  2. Build & Send: Pass the SQL query as a text string buffer via API.\n  3. Check Status: Fetch the returned rows and handle any execution errors.\n  4. Disconnect: Close the connection to free up database resources.\n🔹 𝗦𝘁𝗮𝗻𝗱𝗮𝗿𝗱 𝗦𝗤𝗟 𝗗𝗿𝗶𝘃𝗲𝗿𝘀: Every major database pairs with a dedicated driver, such as psycopg2 for PostgreSQL, mysql-connector for MySQL, and ibm_db for Db2.\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nWhich database driver do you use most often when connecting Python to SQL?\n\n#SQL #Python #DataAnalytics #MySQL",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 11,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟭 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗪𝗿𝗶𝘁𝗶𝗻𝗴 𝗖𝗼𝗱𝗲 𝗨𝘀𝗶𝗻𝗴 𝗣𝘆𝘁𝗵𝗼𝗻 𝗗𝗕-𝗔𝗣𝗜\n\nBefore learning Python's DB-API, I wondered if switching from MySQL to PostgreSQL meant rewriting all my database code from scratch. Today, I learned how two core objects—Connections and Cursors—standardize database programming across Python.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗢𝗯𝗷𝗲𝗰𝘁𝘀 (𝗦𝗲𝘀𝘀𝗶𝗼𝗻 𝗠𝗮𝗻𝗮𝗴𝗲𝗿): Manages authentication and transactions using 4 key methods: .cursor(), .commit() to save changes, .rollback() to undo errors, and .close() to free memory.\n🔹 𝗖𝘂𝗿𝘀𝗼𝗿 𝗢𝗯𝗷𝗲𝗰𝘁𝘀 (𝗙𝗶𝗹𝗲-𝗛𝗮𝗻𝗱𝗹𝗲 𝗳𝗼𝗿 𝗥𝗼𝘄𝘀): Executes SQL queries and scrolls through fetched results row-by-row. Multiple cursors on the same connection are not isolated—changes made by one are immediately visible to others.\n🔹 𝗧𝗵𝗲 𝟱-𝗦𝘁𝗲𝗽 𝗗𝗕-𝗔𝗣𝗜 𝗖𝗼𝗱𝗶𝗻𝗴 𝗣𝗮𝘁𝘁𝗲𝗿𝗻:\n  conn = psycopg2.connect(dbname=\"analytics\", user=\"admin\", password=\"pwd\")\n  cur = conn.cursor()\n  cur.execute(\"SELECT * FROM employees;\")\n  rows = cur.fetchall()\n  conn.close()\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nDo you close your database connections manually with .close(), or wrap them inside a Python 'with' context manager?\n\n#Python #SQL #DataAnalytics #DailyLearning",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   },
   {
     "day": 12,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟮 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗝𝘂𝗽𝘆𝘁𝗲𝗿 𝗡𝗼𝘁𝗲𝗯𝗼𝗼𝗸 𝗠𝗮𝗴𝗶𝗰 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 & 𝗦𝗤𝗟 𝗠𝗮𝗴𝗶𝗰\n\nTyping conn.cursor() and cur.execute() every time you want to test a quick SQL query in Jupyter slows down data exploration. Today, I set up ipython-sql Magic Commands to run clean SQL directly inside notebook cells using % and %% symbols.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗟𝗶𝗻𝗲 𝗠𝗮𝗴𝗶𝗰 (%) 𝘃𝘀. 𝗖𝗲𝗹𝗹 𝗠𝗮𝗴𝗶𝗰 (%%): Single % commands (like %pwd, %ls, %whos) run on a single line, while double %% commands (like %%timeit, %%writefile) operate on the entire cell.\n🔹 𝗧𝗵𝗲 𝗦𝗤𝗟 𝗠𝗮𝗴𝗶𝗰 𝗦𝗲𝘁𝘂𝗽 𝗶𝗻 𝗝𝘂𝗽𝘆𝘁𝗲𝗿:\n  !pip install ipython-sql\n  %load_ext sql\n  %sql sqlite:///HR.db\n🔹 𝟭-𝗟𝗶𝗻𝗲 𝘃𝘀. 𝗠𝘂𝗹𝘁𝗶-𝗟𝗶𝗻𝗲 𝗦𝗤𝗟 𝗤𝘂𝗲𝗿𝗶𝗲𝘀: Use %sql for quick one-liners and %%sql at the very top of a cell for complex multi-line queries:\n  %%sql\n  SELECT department, COUNT(*) FROM employee GROUP BY department;\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nDocumenting my daily data milestones on Data & Code by Himanshu.\n\nWhat is your favorite Jupyter magic command that speeds up your daily data workflow?\n\n#Jupyter #SQL #Python #DataAnalytics",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      }
     ]
   },
   {
     "day": 13,
-    "posted": false,
+    "posted": true,
     "content": "🚀 𝗗𝗮𝘆 𝟭𝟯 𝗼𝗳 𝗠𝘆 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆: 𝗘𝘅𝗽𝗹𝗼𝗿𝗮𝘁𝗼𝗿𝘆 𝗗𝗮𝘁𝗮 𝗔𝗻𝗮𝗹𝘆𝘀𝗶𝘀 (𝗦𝗤𝗟, 𝗣𝗮𝗻𝗱𝗮𝘀 & 𝗦𝗲𝗮𝗯𝗼𝗿𝗻)\n\n3,600 mg of sodium in a single 40-piece Chicken McNuggets order stood out immediately when I combined SQLite, Pandas, and Seaborn today.\n\nNumbers buried inside a raw CSV file rarely tell the full story. Today, I built an end-to-end Exploratory Data Analysis (EDA) pipeline: loading a CSV into SQLite, querying it into Pandas, and spotting extreme outliers visually.\n\n💡 𝗖𝗼𝗿𝗲 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀 𝗟𝗲𝗮𝗿𝗻𝗲𝗱 𝗧𝗼𝗱𝗮𝘆:\n🔹 𝗖𝗦𝗩 𝘁𝗼 𝗦𝗤𝗟𝗶𝘁𝗲 𝘁𝗼 𝗣𝗮𝗻𝗱𝗮𝘀: Turning a flat CSV into a queryable SQLite table in 4 lines of Python:\n  data = pd.read_csv('mcdonalds_menu.csv')\n  conn = sqlite3.connect('mcdonalds.db')\n  data.to_sql('mcdonalds_nutrition', conn)\n  df = pd.read_sql(\"SELECT * FROM mcdonalds_nutrition\", conn)\n🔹 𝗙𝗶𝗻𝗱𝗶𝗻𝗴 𝗘𝘅𝘁𝗿𝗲𝗺𝗲𝘀 (𝗱𝗲𝘀𝗰𝗿𝗶𝗯𝗲 & 𝗶𝗱𝘅𝗺𝗮𝘅): Using df.describe() to get summary statistics and df['Sodium'].idxmax() to pinpoint the exact outlier row (Row 82).\n🔹 𝗩𝗶𝘀𝘂𝗮𝗹𝗶𝘇𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗦𝗲𝗮𝗯𝗼𝗿𝗻: Using swarmplot() for categorical distributions, jointplot() to check Protein vs. Fat correlation (r = 0.81), and boxplot() to highlight extreme sugar outliers.\n\n📂 𝗢𝗽𝗲𝗻-𝗦𝗼𝘂𝗿𝗰𝗲 𝗝𝗼𝘂𝗿𝗻𝗲𝘆:\nDocumenting these daily hurdles and solutions is helping me build a rock-solid foundation in data analytics. You can track my complete day-by-day progress and open-source queries here:\n🔗 https://github.com/Himanshu-5680/my-MYSQL-notes\n\n🙌 𝗚𝗿𝗮𝘁𝗶𝘁𝘂𝗱𝗲 & 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸𝗲𝗿:\nTracking my daily updates on Data & Code by Himanshu. A huge thanks to IBM, Coursera, and GitHub for providing the robust environment and version control to make this learning possible!\n\nWhen exploring a new dataset, do you spot outliers first with df.describe() or with a visual boxplot()?\n\n#DataAnalytics #Python #SQL #Seaborn",
     "mentions": [
-      {"text": "Data & Code by Himanshu", "urn": "urn:li:organization:144024711"},
-      {"text": "IBM", "urn": "urn:li:organization:1009"},
-      {"text": "Coursera", "urn": "urn:li:organization:2748809"},
-      {"text": "GitHub", "urn": "urn:li:organization:227233"}
+      {
+        "text": "Data & Code by Himanshu",
+        "urn": "urn:li:organization:144024711"
+      },
+      {
+        "text": "IBM",
+        "urn": "urn:li:organization:1009"
+      },
+      {
+        "text": "Coursera",
+        "urn": "urn:li:organization:2748809"
+      },
+      {
+        "text": "GitHub",
+        "urn": "urn:li:organization:227233"
+      }
     ]
   }
 ]
